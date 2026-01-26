@@ -64,7 +64,7 @@ theorem prime_infinitely_many : ∀ N, ∃ p ≥ N, Nat.Prime p := by
   have h_devide_1 : p ∣ 1 := by
     have h_divide_sub : p ∣ M - factorial N := by
       exact Nat.dvd_sub h_p_dvd_M h_p_dvd_factN
-      -- 把 M - factorial N 化簡成 1
+      -- Simplify the expression M - factorial N to 1
     simpa [M, Nat.add_sub_cancel] using h_divide_sub
   have h_p_is_one : p = 1 := by
     exact eq_one_of_dvd_one h_devide_1
